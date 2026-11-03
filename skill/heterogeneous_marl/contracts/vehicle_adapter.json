@@ -1,0 +1,29 @@
+{
+  "schema": "heterogeneous_marl_vehicle_adapter_v1",
+  "status": "design_contract",
+  "observation": {
+    "vehicle_id": "string",
+    "role": "string",
+    "timestamp_monotonic_ms": "number",
+    "pose_relative_m": {"x": "number", "y": "number", "heading_rad": "number"},
+    "sensor_quality": "object",
+    "local_features": "array[21]",
+    "task_state": "string",
+    "safety_state": "string"
+  },
+  "action": {
+    "task_id": "string",
+    "action_id": "integer",
+    "issued_monotonic_ms": "number",
+    "expires_ms": "integer",
+    "max_speed_m_s": "number"
+  },
+  "required_guards": [
+    "local command validation",
+    "command expiry",
+    "sequence validation",
+    "watchdog",
+    "boundary protection",
+    "emergency stop"
+  ]
+}

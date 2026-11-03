@@ -1,0 +1,24 @@
+{
+  "schema": "heterogeneous_marl_summary_message_v1",
+  "status": "design_contract",
+  "required": [
+    "vehicle_id",
+    "role",
+    "sequence",
+    "monotonic_timestamp_ms",
+    "pose_relative_m",
+    "local_response_summary",
+    "plume_state",
+    "task_state",
+    "candidate_confidence",
+    "sensor_quality",
+    "message_age_ms"
+  ],
+  "rules": [
+    "Reject stale sequence numbers",
+    "Reject messages beyond the configured age limit",
+    "Do not transmit raw ADC histories by default",
+    "Record packet loss and latency",
+    "Fall back to local policy when communication is unavailable"
+  ]
+}

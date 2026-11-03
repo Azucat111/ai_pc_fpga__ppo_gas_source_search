@@ -1,0 +1,27 @@
+{
+  "version": "tgs2602_threshold_v1",
+  "source_capture": "reports/tgs_threshold_source_static_20261030_220812",
+  "air_reference_raw_counts": {
+    "tgs0": 1173,
+    "tgs1": 1045
+  },
+  "air_reference_voltage_v": {
+    "tgs0": 0.2199375,
+    "tgs1": 0.1959375
+  },
+  "response_scale_v": 0.1,
+  "noise_response_normalized": 0.0028125,
+  "enter_threshold_counts": 6,
+  "exit_threshold_counts": 3,
+  "enter_z": 4.0,
+  "common_enter_z": 2.5,
+  "exit_z": 2.0,
+  "trigger_duration_s": 3.0,
+  "max_paired_sample_gap_s": 0.5,
+  "status": "current_engineering_candidate_validated_on_static_source_only",
+  "limitations": [
+    "not validated for moving-car airflow",
+    "not validated across source distances or source strengths",
+    "session baseline must be rechecked before a different environment"
+  ]
+}
