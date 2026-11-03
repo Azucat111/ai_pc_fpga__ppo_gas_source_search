@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-31T22:15:56",
+  "generated_by": "bme688/training/collect_bme688_data.py",
+  "source_data_dir": "bme688/data",
+  "source_files_sha256": {
+    "session_20261031_212430_air.csv": "9363a4f76ab7629665e6e97556a1c4e9bc4cc929710016c484e7302cbf868c48",
+    "session_20261031_212430_alc.csv": "12f2006053a4ba2a16c8772be409fc10c481688b12c66848f5ea917bbe04553a"
+  },
+  "feature_columns": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "input_len": 10,
+  "num_classes": 2,
+  "labels": [
+    {
+      "label": 0,
+      "key": "air",
+      "name": "air",
+      "class_type": "odor"
+    },
+    {
+      "label": 1,
+      "key": "alcohol",
+      "name": "alcohol (capture label: alc)",
+      "class_type": "odor"
+    }
+  ],
+  "label_keys": [
+    "air",
+    "alcohol"
+  ],
+  "label_names": [
+    "air",
+    "alcohol"
+  ],
+  "normalize_baseline": true,
+  "preprocessing": "row_mean_normalize_then_standard_scaler_fit_on_train_only",
+  "model": {
+    "architecture": "ConvTran",
+    "emb_size": 32,
+    "num_heads": 2,
+    "dim_ff": 128,
+    "dropout": 0.1
+  },
+  "split": {
+    "strategy": "chronological_within_class_60_20_20",
+    "session_ids": [
+      "session_20261031_212430"
+    ],
+    "counts_by_class": {
+      "air": {
+        "total": 100,
+        "train": 60,
+        "validation": 20,
+        "test": 20,
+        "train_time": [
+          "2026-10-31 21:53:48",
+          "2026-10-31 21:55:20"
+        ],
+        "validation_time": [
+          "2026-10-31 21:55:22",
+          "2026-10-31 21:55:51"
+        ],
+        "test_time": [
+          "2026-10-31 21:55:53",
+          "2026-10-31 21:56:22"
+        ]
+      },
+      "alc": {
+        "total": 100,
+        "train": 60,
+        "validation": 20,
+        "test": 20,
+        "train_time": [
+          "2026-10-31 22:02:34",
+          "2026-10-31 22:04:06"
+        ],
+        "validation_time": [
+          "2026-10-31 22:04:07",
+          "2026-10-31 22:04:37"
+        ],
+        "test_time": [
+          "2026-10-31 22:04:39",
+          "2026-10-31 22:05:08"
+        ]
+      }
+    },
+    "independent_session_test": false
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix_labels_air_alcohol": [
+      [
+        20,
+        0
+      ],
+      [
+        0,
+        20
+      ]
+    ],
+    "classification_report": {
+      "air": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 20.0
+      },
+      "alcohol": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 20.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      }
+    },
+    "workflow_threshold_diagnostic": {
+      "alcohol_probability_threshold": 0.8,
+      "alcohol_test_samples_above_threshold": 20,
+      "alcohol_test_sample_count": 20,
+      "air_test_samples_above_threshold": 0,
+      "air_test_sample_count": 20
+    }
+  },
+  "best_epoch": 72
+}

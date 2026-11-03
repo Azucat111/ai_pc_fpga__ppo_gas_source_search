@@ -1,0 +1,26 @@
+{
+  "vendor/bme68x/bme68x.c": {
+    "url": "https://raw.githubusercontent.com/boschsensortec/BME68x_SensorAPI/80ea120a8b8ac987d7d79eb68a9ed796736be845/bme68x.c",
+    "sha256": "bad525ea57fe57a5d7dda19d287781bcbab50fdbf2dedea737c16b206cbe0157"
+  },
+  "vendor/bme68x/bme68x.h": {
+    "url": "https://raw.githubusercontent.com/boschsensortec/BME68x_SensorAPI/80ea120a8b8ac987d7d79eb68a9ed796736be845/bme68x.h",
+    "sha256": "09ed6babf92955ced360790958e2e2f03efb85bc4f0a8a864a4151a905eaf0ca"
+  },
+  "vendor/bme68x/bme68x_defs.h": {
+    "url": "https://raw.githubusercontent.com/boschsensortec/BME68x_SensorAPI/80ea120a8b8ac987d7d79eb68a9ed796736be845/bme68x_defs.h",
+    "sha256": "5f59c0bafbcc416c091a1a1cc40bb7362f0b48ea02ac7fa5197813f491de01aa"
+  },
+  "vendor/bme68x/license.txt": {
+    "url": "https://raw.githubusercontent.com/boschsensortec/BME68x_SensorAPI/80ea120a8b8ac987d7d79eb68a9ed796736be845/LICENSE",
+    "sha256": "56df116398e0b72a12ae353d93002d29175583590283ced2c2510e3d8075546f"
+  },
+  "vendor/pynq/pynqz2.tcl": {
+    "url": "https://raw.githubusercontent.com/Xilinx/PYNQ/v3.0.1/boards/Pynq-Z2/petalinux_bsp/hardware_project/pynqz2.tcl",
+    "sha256": "5f237f90bd27911383682b553f4595e24009839b111e4bb6a0973b09f03d11fe"
+  },
+  "vendor/pynq/license.txt": {
+    "url": "https://raw.githubusercontent.com/Xilinx/PYNQ/v3.0.1/LICENSE",
+    "sha256": "6d822a20e645291ace79180f0ae94f604b9d5fb81165e302b2c7b8cd7bf83fc3"
+  }
+}

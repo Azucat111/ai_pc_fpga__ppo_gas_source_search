@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpga-car"
+version = "0.1.11"
+requires-python = ">=3.8"
+description = "PYNQ-Z2 car configuration, protocol, and Ubuntu controller"
+
+[project.scripts]
+car-host = "car.host:main"
+car-board = "car.board:main"
+
+[tool.setuptools.packages.find]
+where = ["software"]
