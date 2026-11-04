@@ -1,0 +1,21 @@
+[Unit]
+Description=FPGA car Wi-Fi control, initially STOP
+After=local-fs.target bootpy.service jupyter.service
+RequiresMountsFor=/home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs
+ConditionPathExists=/home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/build/output/car.bit
+ConditionPathExists=/home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/build/output/car.hwh
+ConditionPathExists=/home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/config/car.json
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs
+ExecStart=/bin/sh /home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/tools/pynq_run.sh -m car.board --enable --bme-mode gas10 --tgs-log /home/xilinx/tgs_live_20261102.jsonl --config config/car_remote_tuned_20261103.json
+ExecStop=/bin/sh /home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/tools/pynq_run.sh -m car.emergency_stop
+ExecStopPost=/bin/sh /home/xilinx/jupyter_notebooks/FPGA_CAR_v0_1_12_tgs/tools/pynq_run.sh -m car.emergency_stop
+KillSignal=SIGINT
+TimeoutStopSec=15
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
